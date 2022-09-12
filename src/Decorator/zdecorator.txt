@@ -1,0 +1,18 @@
+Amaç:
+    Bir nesneye dinamik olarak ek sorumluluk eklemek
+    Farklı decoratorler nesneyi sırayla decore ederek ona yeni sorumluluklar kazandırır.
+
+Problem Çıkış noktası:
+
+    Yeni sorumluluğu tüm sınıfa değil nesneye eklemek isteriz
+    ***Sorumlulukları sınıfa eklemek için inheritence kullanırız(extends or implements)
+    ** Class a yeni sorumluluk eklemenin en temel problemi yeniden compile etmek. Classa sorumluluklar compile-time da
+    eklenir.Her yeni sorumluluk recompile gerektirir.
+    * Ayrıca n sorumluluk için n! subclass a ihtiyaç var
+
+Çözüm:
+
+    inheritence(is a) yerine object composition (has a) kullan
+    GoF'un da ikinci yaklaşımıdır
+        * Program to interface, not an implementation.
+        ** Favor object composition over class inheritence
