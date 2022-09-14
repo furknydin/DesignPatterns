@@ -1,18 +1,23 @@
 package Decorator.Insurance;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AydinInsurance implements Insurance{
 
-    private String name;
+    private int price;
+
+    public AydinInsurance(int price) {
+        this.price = price;
+    }
 
     @Override
     public double calculateInsurance() {
-        return 0;
+        return price;
     }
 
     @Override
     public List<Insurance> getContext() {
-        return null;
+        return new ArrayList<>();
     }
 }
