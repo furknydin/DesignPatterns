@@ -1,4 +1,4 @@
-package singleton;
+package Singleton;
 
 /***
  * Lazy load singleton multithread ortamlarda sorunlara yol açar.

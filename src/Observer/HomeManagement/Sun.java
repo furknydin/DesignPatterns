@@ -40,14 +40,13 @@ public class Sun implements Observable {
         this.state = (Boolean) state;
     }
 
+    /**
+     * stream api while döngüsü
+     */
     @Override
     public void publish() {
-        Iterator<Observer> iterator = observers.iterator();
+        observers.forEach(observer -> observer.receive(this));
 
-        while (iterator.hasNext()){
-            Observer notify = iterator.next();
-            notify.receive(this);
-        }
     }
 
     @Override

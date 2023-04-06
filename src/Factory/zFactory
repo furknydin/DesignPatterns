@@ -1,0 +1,48 @@
+Intent: Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory
+method lets a class defer instantiation to subclasses.
+
+Problem: Object oriented proglamlamada en temel iş, obje yaratmak. Uygulamalarda da farklı karmaşıklıkta pek çok
+sınıf vardır ve bu sınıfların nesneleri uygulamaının farklı yerlerinde oluşturulur.
+    Bir nesneyi yaratmak onu kullanmaktan daha karmaşık olabilir. Çünkü nesneleri yaratmak için pek çok bilgiye ihtiyaç
+duyulur. Bu yüzden constructor çok fazla parametre alabilir.
+
+Çözüm: Factory pattern nesnelerin nerede yaratılacağı sorununu çözer. Factory method, nesnelerin yaratılmasından sorumlu
+bir metottur. Bir interface de tanımlanır. subclasslarda gerçeklenir. Her subclass farklı bir objeyi oluşturur.
+
+    *Create methodlarına ne kadar az parametre geçilirse factory pattern o kadar verimli bir hale gelir.
+    *Nesneler arasında bir ilişki yoksa farklı factory method interfaceleri kullanılmalıdır.
+
+Solve 1:
+    Factory isimli bir interface yarat üzerine create diye bir method koy bu create 1 tür employee döndürsün onları override
+ettiğiniz yerlerde de her farklı cinsden employee'yi geri döndürsün.
+
+** parametreleri create methoduna geçmek yerine create methodunun bu parametreleri temin etmesi gerekmektedir.
+** Factory methoduna gelen parametre sayısı arttıkça factoryden alınan verim düşer.
+
+Solve 2: Static sınıflı factory
+
+**Bu yöntem objeden kaçış yöntemidir.SRP ve OSP'ye uygun olmaz her yeni tipde yeni ifler gelmesi mümkün olabilir. Bir
+yerde birden fazla şeyi halletmektedir ve değişime kapalıdır.
+**Factory anlamına bakıldığında zaten 1 nesneyi soyutlamak amaçdır. Bu yöntemle birden fazla nesne yaratma soyutlanabilir.
+
+*** Factory Method da nesne farklı şekillerde oluşturulabilir.
+    * Sadece constructor yada varsayılan constructor ve set metotları kullanılabilir.
+    * Nesne var olan bir Prototype nesneden kopyalanarak oluşturulabilir.
+    * Builder ile inşa edilebilir.
+
+*** Factroy her zaman nesne oluşturmayabilir. Object pool gibi yapılarda Factory method havuzdan bir nesne de dönebilir.
+
+*** Factory method zaman zaman var olan tek nesneyi Singleton döndüren method olarak da kullanılabilir.
+Bu durumda metot zorunlu olarak static olur.
+
+Joshua Block Static Factory Yaklaşımı:
+ ** Constructorlar ile obje oluşturmak problemli. Çünkü  constructorların ayırt edici isimleri yoktur. Bu yüzden çağırılmaları
+ zor hataya açık. (Çoklu constructor) Ama static metotların anlamlı isimleri vardır.
+ ** Nesnelerin tüm constructorlarını private yap. Nesneyi constructorları çağıran static creator metotlar oluştur.
+ ** Yapmak istediği bu yöntemle named constructor oluşturmak
+ ** Bu çözümde her sınıf kendi nesnesinin üreticisidir, bundan dolayı ayrı arayüz ve implementasyonlara gerek kalmaz.
+ ** Factory methoda alternatif bir yöntemdir.
+
+
+
+ ***** Factroy Methodunun en bariz problemi her yeni class için yeni bir factory methoduna ihityaç duymasıdır.
