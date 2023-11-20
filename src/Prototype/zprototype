@@ -20,7 +20,7 @@ Prototype:
     *Prototype kalıbı nesnelerin nasıl üretileceğini çözer. Sunduğu çözüm yeni nesneleri belli durumlara sahip örenek
     nesnelerden kopyalayarak yaratmaktır.
     *Prototype kalıbı nesnelerin nerede oluşturulacağı ile ilgilenmez dolayısıyla nesne yaratmayı soyutlamaz.
-    *Prototype kalıbı nesne yaratan(Factory) yapının parçası olabilir.
+    *Prototype kalıbı nesne yaratan(CreationalPatterns.Factory) yapının parçası olabilir.
 
 
 
