@@ -1,0 +1,28 @@
+Amaç: Protatip bir nesneyi kullanarak yaratlıcak nesneleri belirlemek ve yeni nesneleri prototipi kopyalayarak
+oluşturmak
+
+Problem:
+    *Uygulamalarda sıklıkla business domain classlarından nesneler oluştururuz.
+    *Bu nesneler zaman zaman yüksek karmaşıklıkta olurlar. Nesnelerin karmaşık olması, durumlarının state
+    *Bazen bir sınıftan oluşturulan nesnelerin, az sayıdaki bir kaç durumdan birine sahip olması istenir
+    *Zaman zaman bu farklı durumlar birbirlerinden elde edilebilir. Yani nesnelerin alabileceği durumlar arasında
+    büyük farklar yoktur. Fark fonksiyonelliktedir. Bir kaç durum değişkeninin değerinin değişmesiyle farklı durumlar
+    elde edilir.
+
+
+Çözüm:
+    Bazen bu türden karmaşık nesneleri sıfırdan yaratmak yerine, hali hazırda elde var olan nesnelerden kopyalayarak(clone)
+    elde etme yoluna girilebilir.
+    Durumu kopyalayarak çoğaltılan nesne prototip nesnedir.
+    Elde edilen nesnenin durumu prototip ile aynıdır. Set kullanarak durumları değiştir.
+
+CreationalPatterns.Prototype:
+    *CreationalPatterns.Prototype kalıbı nesnelerin nasıl üretileceğini çözer. Sunduğu çözüm yeni nesneleri belli durumlara sahip örenek
+    nesnelerden kopyalayarak yaratmaktır.
+    *CreationalPatterns.Prototype kalıbı nesnelerin nerede oluşturulacağı ile ilgilenmez dolayısıyla nesne yaratmayı soyutlamaz.
+    *CreationalPatterns.Prototype kalıbı nesne yaratan(CreationalPatterns.Factory) yapının parçası olabilir.
+
+
+
+***En büyük artısı devamlı constructor çağrısı yapmaktan kaçınırız
+***Eksisi client gereğinden fazla kod biliyor factorynin halletmesi gereken yerleri yapıyor

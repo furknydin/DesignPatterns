@@ -27,7 +27,7 @@ yerde birden fazla şeyi halletmektedir ve değişime kapalıdır.
 
 *** CreationalPatterns.Factory Method da nesne farklı şekillerde oluşturulabilir.
     * Sadece constructor yada varsayılan constructor ve set metotları kullanılabilir.
-    * Nesne var olan bir Prototype nesneden kopyalanarak oluşturulabilir.
+    * Nesne var olan bir CreationalPatterns.Prototype nesneden kopyalanarak oluşturulabilir.
     * Builder ile inşa edilebilir.
 
 *** Factroy her zaman nesne oluşturmayabilir. Object pool gibi yapılarda CreationalPatterns.Factory method havuzdan bir nesne de dönebilir.
